@@ -1,4 +1,4 @@
-# fly.toml file generated for santacruz-app on 2023-02-13T11:22:41-03:00
+# fly.toml file generated for santacruz-app on 2023-02-14T12:44:59-03:00
 
 app = "santacruz-app"
 kill_signal = "SIGINT"
