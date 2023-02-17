@@ -1,6 +1,6 @@
 const Farm = () => {
   return (
-    <div>Fazenda</div>
+    <div style={{width: '100%', background: '#fff'}}>Fazenda</div>
   )
 }
 

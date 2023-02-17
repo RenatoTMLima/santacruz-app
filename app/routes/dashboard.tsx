@@ -1,5 +1,6 @@
 import { Outlet } from '@remix-run/react'
 import { AppMainLayout } from '~/components/AppMainLayout'
+import { Summary } from '~/components/Summary'
 import { useLocation } from '@remix-run/react'
 
 export default function HomeRoute () {
@@ -7,6 +8,7 @@ export default function HomeRoute () {
   
   return (
     <AppMainLayout path={pathname}>
+      <Summary />
       <Outlet />
     </AppMainLayout>
   )
