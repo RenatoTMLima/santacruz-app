@@ -5,11 +5,16 @@ import {
   Title
 } from '~/styles/pages/dashboard'
 import { Form, useActionData } from '@remix-run/react'
-import type { ActionArgs } from '@remix-run/node'
+import type { ActionArgs, LoaderArgs } from '@remix-run/node'
 import { json } from '@remix-run/node'
 import { Input } from '~/components/basic/Input'
+import { validateAuth } from '~/server/services/sessions.server'
 
-export const action = async ({ context, params, request }: ActionArgs) => {
+export const loader = async ({ request }: LoaderArgs) => {
+  return validateAuth(request)
+}
+
+export const action = async ({ request }: ActionArgs) => {
   const form = await request.formData()
 
   console.log('ENTRIES', Object.fromEntries(form.entries()))
@@ -20,8 +25,6 @@ export const action = async ({ context, params, request }: ActionArgs) => {
 const Farm = () => {
   const data = useActionData()
 
-  console.log({data})
-  
   return (
     <DashContainer>
       <LeftForm>
@@ -31,7 +34,7 @@ const Farm = () => {
           <Input type="text" label="Mês" name="month" />
           <Input type="text" label="Categoria" name="category" />
           <Input type="text" label="Valor" name="value" />
-          <input type="submit" />
+          <button type="submit" >Lançar</button>
         </Form>
       </LeftForm>
       <RightData>Eita</RightData>

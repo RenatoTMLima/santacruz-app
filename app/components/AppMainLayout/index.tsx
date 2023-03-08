@@ -5,7 +5,7 @@ import {
   SideBarContent,
   Content
 } from './styles'
-import { Link } from '@remix-run/react'
+import { Link, Form } from '@remix-run/react'
 
 import logo from '../../../public/logo.png'
 import cow from '../../../public/icons/cow.svg'
@@ -41,10 +41,12 @@ export const AppMainLayout = ({ children, path }: { children: ReactNode, path: s
               <img src={settings} alt="Settings" />
               <span>Configurações</span>
             </Link>
-            <Link to="logout" className={currentPath === 'logout' ? 'selected' : ''}>
-              <img src={logout} alt="Logout" />
-              <span>Sair</span>
-            </Link>
+            <Form action="/logout" method="post">
+              <button type='submit'>
+                <img src={logout} alt="Logout" />
+                <span>Sair</span>
+              </button>
+            </Form>
           </footer>
         </SideBarContent>
       </SideBar>

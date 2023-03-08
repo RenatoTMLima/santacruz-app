@@ -89,4 +89,26 @@ export const SideBarContent = styled.div`
     font-weight: 700;
     background-color: #ddd
   }
+
+  button {
+    width: 100%;
+    padding: 10px 16px;
+    color: #000;
+    border-radius: 10px;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    font-size: 1.25rem;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+
+    img {
+      height: 30px;
+    }
+  }
+
+  button:hover {
+    background-color: #eee;
+  }
 `
