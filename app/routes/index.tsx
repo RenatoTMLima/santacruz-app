@@ -24,6 +24,7 @@ export const loader = async ({ request }: LoaderArgs) => {
   const logged = await isLogged(request)
 
   if(logged) return redirect('dashboard')
+  console.log("TEST")
 
   return true
 }
